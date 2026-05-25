@@ -1,0 +1,16 @@
+.DS_Store
+.env
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+
+# Local personal scratchpad/notes
+notes.md
+
+# Ignore the entire notes folder and everything inside it
+/MyNotes/
+core.[0-9]*
+node_modules/
+core.[0-9]*
