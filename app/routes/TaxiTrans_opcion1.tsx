@@ -6,25 +6,6 @@ import imgProfile from "../assets/images/jacob_profile.jpg"
 export default function TaxiTrans() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          {/* Logo / Brand */}
-          <a
-            href="/"
-            className="font-extrabold text-2xl text-blue-900 flex items-center gap-2 hover:opacity-80 transition"
-          >
-            🏠 <span className="hidden sm:inline">Home</span>
-          </a>
-
-          {/* Action Button */}
-          <a
-            href="https://wa.me/34123456789"
-            className="hidden md:block bg-yellow-400 text-black px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition shadow-sm"
-          >
-            WhatsApp Me
-          </a>
-        </div>
-      </header>
       {/* Hero Section */}
       <div
         className="relative h-[60vh] bg-cover bg-center flex items-center justify-center"

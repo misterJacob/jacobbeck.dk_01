@@ -4,7 +4,7 @@ export interface NavigationEntry {
   pathUrl: string;
   title: string;
   description: string;
-  information:string;
+  information: string;
   image: string;
   bgColor: string;
   iconColor: string;
@@ -15,7 +15,7 @@ export interface NavigationEntry {
 export const entryData: NavigationEntry[] = [
   {
     id: 0,
-    path: "#placestogo",
+    path: "placestogo",
     pathUrl: "/places_to_go",
     title: "PlacesToGo",
     description: "Places Worth Visiting.",
@@ -29,14 +29,13 @@ export const entryData: NavigationEntry[] = [
   },
   {
     id: 1,
-    path: "#shop",
+    path: "shop",
     pathUrl: "/shop",
     title: "SecondHand Shop ",
     description: "Used Items For Sale ",
-    information:
-      "loremipzumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-
-    image: "shop.jpg",
+    information: `Discover our curated collection of used goods! Buying second-hand reduces waste and uncovers unique finds you cannot get anywhere else. Disclaimer: This storefront is a development mockup built solely to demonstrate e-commerce functionality. The inventory listed here is for project display purposes only and no real transactions will be processed.`,
+    // image: "shop.jpg",
+    image: "second-hand-stamp.jpg",
     bgColor: "bg-purple-500/20",
     iconColor: "text-purple-400",
     textColor: "text-purple-200",
@@ -44,12 +43,11 @@ export const entryData: NavigationEntry[] = [
   },
   {
     id: 2,
-    path: "#photogalery",
+    path: "photogalery",
     pathUrl: "/photogallery",
     title: "Foto Slides ",
     description: "Photo From my Favorite Places",
-    information:
-      "loremipzumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    information: `Explore the digital gallery. This page is designed to handle high-resolution image rendering and complex layout structures. Please note: This section serves purely as a portfolio demonstration of full-stack web development and dynamic asset routing.`,
 
     image: "photoGallery.jpg",
     bgColor: "bg-emerald-500/20",
@@ -59,12 +57,11 @@ export const entryData: NavigationEntry[] = [
   },
   {
     id: 3,
-    path: "#transfer",
+    path: "transfer",
     pathUrl: "/transfer",
     title: "Transport GC",
-    description: "GoodTranport",
-    information:
-      "loremipzumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "Best Transport",
+    information: `Experience reliable and safe transport across Gran Canaria. As a professional driver with over 15 years of experience, I provide a fully insured and licensed taxi service you can trust. Sit back, relax, and let an expert handle the roads.`,
 
     image: "myTaxi.jpg",
     bgColor: "bg-amber-500/20",

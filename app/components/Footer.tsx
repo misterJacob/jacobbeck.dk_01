@@ -4,8 +4,7 @@ import {
 } from "react-icons/fa";
 import { ImMail4 } from "react-icons/im";
 import { FaSquareXTwitter } from "react-icons/fa6";
-
-
+import Logo from "../assets/images/logo.svg";
 
 const footerLinks = {
   Product: ["Features", "Pricing", "Security", "Roadmap", "Changelog"],
@@ -28,9 +27,9 @@ export default function Footer() {
         <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12">
           <div className="col-span-1 sm:col-span-3 lg:col-span-2 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start space-x-2 mb-3 sm:mb-4">
-              <div className="rounded-lg">
+              <div className="flex items-center justify-center rounded-lg bg-slate-100 p-2 w-fit">
                 <img
-                  src="/logo.png"
+                  src={Logo}
                   alt="CodeFlow Logo"
                   className="w-6 h-6 sm:w-8 sm:h-8"
                 />
@@ -41,7 +40,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-400 mb-4 sm:mb-6 max-w-xs mx-auto sm:mx-0 text-sm sm:text-base">
-             All production is made by Jacob Beck. This is a personal project and not affiliated with any company.
+              All production is made by Jacob Beck. This is a personal project
+              and not affiliated with any company.
             </p>
             <div className="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
               <a

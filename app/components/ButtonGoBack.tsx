@@ -1,7 +1,6 @@
 import { ArrowBigLeft, Sparkles } from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
-import { entryData } from "~/data/EntryData";
 
 const ButtonGoBack = () => {
   return (

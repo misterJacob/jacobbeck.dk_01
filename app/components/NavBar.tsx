@@ -14,6 +14,14 @@ export default function NavBar({ scrolled }: NavigationProps) {
   const isHomePage = location.pathname === "/";
   const showGoUpButton = scrolled && isHomePage;
 
+  // Reusable styling function for active vs inactive navigation states
+  const linkStyles = ({ isActive }: { isActive: boolean }) =>
+    `transition-colors duration-200 text-sm lg:text-base font-medium ${
+      isActive
+        ? "text-blue-400 font-semibold"
+        : "text-gray-300 hover:text-white"
+    }`;
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -56,21 +64,21 @@ export default function NavBar({ scrolled }: NavigationProps) {
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <NavLink
               to="/about"
-              className="text-gray-300 hover:text-white text-sm lg:text-base"
+              className={linkStyles}
             >
               About Me
             </NavLink>
             <NavLink
-              to="/portfolio"
-              className="text-gray-300 hover:text-white text-sm lg:text-base"
-            >
-              Portfolio
-            </NavLink>
-            <NavLink
               to="/contact"
-              className="text-gray-300 hover:text-white text-sm lg:text-base"
+              className={linkStyles}
             >
               Contact
+            </NavLink>
+            <NavLink
+              to="/portfolio"
+              className={linkStyles}
+            >
+              Portfolio
             </NavLink>
           </div>
 
@@ -94,23 +102,23 @@ export default function NavBar({ scrolled }: NavigationProps) {
             <NavLink
               to="/about"
               onClick={() => setMobileMenuIsOpen(false)}
-              className="block text-gray-300 hover:text-white text-base"
+              className={linkStyles}
             >
               About Me
             </NavLink>
             <NavLink
-              to="/portfolio"
-              onClick={() => setMobileMenuIsOpen(false)}
-              className="block text-gray-300 hover:text-white text-base"
-            >
-              Portfolio
-            </NavLink>
-            <NavLink
               to="/contact"
               onClick={() => setMobileMenuIsOpen(false)}
-              className="block text-gray-300 hover:text-white text-base"
+              className={linkStyles}
             >
               Contact
+            </NavLink>
+            <NavLink
+              to="/portfolio"
+              onClick={() => setMobileMenuIsOpen(false)}
+              className={linkStyles}
+            >
+              Portfolio
             </NavLink>
           </div>
         </div>

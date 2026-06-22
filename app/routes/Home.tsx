@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import { entryData } from "~/data/EntryData";
 
-import Navigation from "~/components/NavBar";
+import Navigation from "~/components/NavBarAI";
 import HeroSection from "../components/Hero";
 import Landing from "~/components/Landing";
 import Footer from "~/components/Footer";

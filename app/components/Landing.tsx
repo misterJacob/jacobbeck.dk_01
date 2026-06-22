@@ -8,7 +8,6 @@ import { Sparkles, ArrowBigRight } from "lucide-react";
 interface LandingProps {
   entries: NavigationEntry[];
 }
-console.log(getImageUrl);
 
 function Landing({ entries }: LandingProps) {
   return (
@@ -19,6 +18,7 @@ function Landing({ entries }: LandingProps) {
         return (
           <div
             key={entry.id}
+            id={entry.path}
             className={`relative group flex flex-col lg:flex-row items-center gap-8 lg:gap-16 p-6 sm:p-8 rounded-2xl border border-white/5 bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:border-white/10 ${
               isEven ? "lg:flex-row-reverse" : ""
             }`}

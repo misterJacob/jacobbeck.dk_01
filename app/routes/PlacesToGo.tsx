@@ -41,7 +41,7 @@ const styles = {
   },
   title: {
     fontSize: "2.5rem",
-    color: "#1a1a1a",
+    color: "#4e4e4e",
     marginBottom: "0.5rem",
     fontWeight: "600",
   },

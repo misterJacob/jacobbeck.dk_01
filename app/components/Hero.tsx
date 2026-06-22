@@ -2,8 +2,6 @@ import React from "react";
 import { ArrowRight, ChevronDown, Sparkles, Play } from "lucide-react";
 import { useEffect, useState } from "react";
 import { entryData, type NavigationEntry } from "../data/EntryData";
-import { Link } from "react-router";
-
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState("PlacesToGo");
@@ -33,11 +31,10 @@ export default function HeroSection() {
     <section
       id="top"
       className="Hero relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
-    >
-      <div
+    >      <div
         className="absolute inset-0 opacity-30"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`
         }}
       />
       <div className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
@@ -136,8 +133,19 @@ export default function HeroSection() {
                       <div
                         className={`p-6 rounded-2xl border border-white/5 backdrop-blur-md transition-all duration-300 w-full h-auto md:h-80 ${currentCard.bgColor}`}
                       >
-                        <Link
-                          to={currentCard.path}
+                        <a
+                          href={`#${currentCard.path}`}
+                          onClick={(e) => {
+                            e.preventDefault();
+
+                            const target = document.getElementById(currentCard.path);
+                            if (target) {
+                              target.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center",
+                              })
+                            }
+                          }}
                           className="hello flex w-full h-full flex-col md:flex-row gap-3 items-start md:items-center"
                         >
                           {/* Dynamic Image frame */}
@@ -169,7 +177,7 @@ export default function HeroSection() {
                               ★ System Status: Loaded Route {currentCard.path}
                             </div>
                           </div>
-                        </Link>
+                        </a>
                       </div>
                     )}
                   </div>
