@@ -1,13 +1,19 @@
 import type { Route } from "./+types/Home";
 import { useEffect, useState } from "react";
 
+import { entryData } from "~/data/EntryData";
+
 import Navigation from "~/components/NavBar";
 import HeroSection from "../components/Hero";
+import Landing from "~/components/Landing";
+import Footer from "~/components/Footer";
 
-import PhotoPrecent from "../components/PhotoPrecent";
-import PlacesToGo from "~/components/PlacesToGo";
-import Shop from "~/components/ShopPrecent";
-import TaxiTansport from "~/components/TaxiTansport";
+
+export function loader() {
+  // The route file acts as the data gatekeeper
+  return { navigationEntries: entryData };
+}
+
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,7 +22,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
+export default function Home({ loaderData }: Route.ComponentProps) {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     function handleScroll() {
@@ -28,15 +34,13 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
   return (
     <main className="min-h-screen bg-slate-950 text-white overflow-hidden">
       <Navigation scrolled={scrolled} />
       <HeroSection />
-      {/* <Landing /> */}
-      <PlacesToGo  />
-      <Shop />
-      <PhotoPrecent />
-      <TaxiTansport />
+      <Landing entries={loaderData.navigationEntries} />
+      <Footer />
     </main>
   );
 }

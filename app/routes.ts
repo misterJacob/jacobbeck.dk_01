@@ -5,8 +5,9 @@ export default [
   route("about", "routes/About.tsx"),
   route("contact", "routes/Contact.tsx"),
   route("portfolio", "routes/Portfolio.tsx"),
+  route(  "photogallery", "routes/PhotoGallery.tsx"),
+  route(  "shop", "routes/Shopping.tsx"),
+  route(  "transfer", "routes/TaxiTrans.tsx"),
+  route(  "places_to_go", "routes/PlacesToGo.tsx"),
 
-  
-//   route("photoGallery", "routes/PhotoGallery.tsx"),
-  // route(  "shopping", "routes/Shopping.tsx"),
 ] satisfies RouteConfig;

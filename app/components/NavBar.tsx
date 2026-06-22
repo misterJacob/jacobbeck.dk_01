@@ -14,10 +14,6 @@ export default function NavBar({ scrolled }: NavigationProps) {
   const isHomePage = location.pathname === "/";
   const showGoUpButton = scrolled && isHomePage;
 
-  // console.log(location);
-  // console.log(scrolled);
-  // console.log(isHomePage);
-  // console.log(showGoUpButton);
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${

@@ -88,11 +88,11 @@ export default function HeroSection() {
               </button>
             </div>
           </div>
-          <div className="relative order-2 w-full">
-            <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/10">
-              <div className="bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-[280px] sm:h-[350px] lg:h-[450px] border border-white/5">
+          <div className="relative order-2 w-full ">
+            <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-8 shadow-2xl border border-white/10 sm:h-[550px]">
+              <div className="bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-[500px] lg:h-[450px] border border-white/5">
                 {/* IDE HEADER */}
-                <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-white/5 backdrop-blur-sm border-b border-white/10">
+                <div className="flex items-center justify-between px-3 sm:px-10 py-2 sm:py-3 bg-white/5 backdrop-blur-sm border-b border-white/10">
                   <div className="flex items-center space-x-1 sm-space-x-2">
                     <div className="flex items-center space-x-1 sm:space-x-2 ">
                       <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500" />
@@ -131,17 +131,17 @@ export default function HeroSection() {
                   </div>
 
                   {/* Dunamic Display */}
-                  <div>
+                  <div className="dynamic-display">
                     {currentCard && (
                       <div
-                        className={`p-6 rounded-2xl border border-white/5 backdrop-blur-md transition-all duration-300 ${currentCard.bgColor}`}
+                        className={`p-6 rounded-2xl border border-white/5 backdrop-blur-md transition-all duration-300 w-full h-auto md:h-80 ${currentCard.bgColor}`}
                       >
                         <Link
                           to={currentCard.path}
-                          className="hello flex w-full h-full flex-col md:flex-row gap-6 items-center"
+                          className="hello flex w-full h-full flex-col md:flex-row gap-3 items-start md:items-center"
                         >
                           {/* Dynamic Image frame */}
-                          <div className="w-full h-full md:w-1/3 aspect-video rounded-xl overflow-hidden bg-black/20">
+                          <div className="w-full h-40 sm:h-48 md:h-full md:w-1/2 md:aspect-video rounded-xl overflow-hidden bg-black/20 shrink-0">
                             <img
                               src={getImageUrl(currentCard.image)}
                               alt={currentCard.title}
@@ -150,9 +150,9 @@ export default function HeroSection() {
                           </div>
 
                           {/* Dynamic Typography using your custom style string tokens */}
-                          <div className="flex-1 space-y-2">
+                          <div className="w-full flex-1 min-w-0 space-y-2 block">
                             <h3
-                              className={`text-2xl font-bold tracking-tight ${currentCard.textColor}`}
+                              className={`text-2xl font-bold tracking-tight break-words ${currentCard.textColor}`}
                             >
                               {currentCard.title}
                             </h3>
