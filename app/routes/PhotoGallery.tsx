@@ -19,6 +19,7 @@ interface PhotoChild {
   title: string;
 }
 
+
 export default function PhotoGallery() {
   // 1. Unified State for API data structures
   const [categories, setCategories] = useState<SlideCategory[]>([]);
@@ -33,6 +34,8 @@ export default function PhotoGallery() {
   const getImageUrl = (path: string, imageName: string) => {
     return `${API_BASE}/images/${path}/${imageName}`;
   };
+
+
 
   // 2. Initial Run: Fetch Slide Categories
   useEffect(() => {
@@ -106,6 +109,18 @@ export default function PhotoGallery() {
     ? getImageUrl(subPhoto2.path, subPhoto2.image)
     : heroImg;
 
+    const swipeThreshold = 50;
+
+    const handleDragEnd = (event: any, info: any) => {
+      const swipeDistance = info.offset.x;
+
+      if (swipeDistance < -swipeThreshold) {
+        nextPhoto(); // 👈 Calls your next photo function below
+      } else if (swipeDistance > swipeThreshold) {
+        prevPhoto(); // 👈 Calls your previous photo function below
+      }
+    };
+
   // 5. Handlers to shift internal photos
   const nextPhoto = () => {
     if (totalPhotos <= 1) return;
@@ -177,6 +192,11 @@ export default function PhotoGallery() {
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.4, ease: "easeInOut" }}
+                  // LIVE SWIPE LOGIC
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={1} // Lets the image follow your finger freely
+                  onDragEnd={handleDragEnd} // Fires the function we updated in Step 1
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               ) : (
