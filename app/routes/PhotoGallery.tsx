@@ -109,7 +109,7 @@ export default function PhotoGallery() {
     ? getImageUrl(subPhoto2.path, subPhoto2.image)
     : heroImg;
 
-    const swipeThreshold = 50;
+    const swipeThreshold = 200;
 
     const handleDragEnd = (event: any, info: any) => {
       const swipeDistance = info.offset.x;

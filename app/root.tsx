@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import CookieConsent from "~/components/CookieConsent";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -36,6 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <CookieConsent />
         <ScrollRestoration />
         <Scripts />
       </body>
