@@ -1,8 +1,14 @@
-import { type RouteConfig, index, route, layout } from "@react-router/dev/routes";
-import { label } from "framer-motion/client";
+import {
+  type RouteConfig,
+  index,
+  route,
+  layout,
+} from "@react-router/dev/routes";
+// import { label } from "framer-motion/client";
 
 export default [
-  index("routes/Home.tsx"),
+  // index("routes/Home.tsx"),
+  layout("layouts/SiteLayout.tsx", [index("routes/Home.tsx")]),
   route("about", "routes/About.tsx"),
   route("contact", "routes/Contact.tsx"),
   route("portfolio", "routes/Portfolio.tsx"),

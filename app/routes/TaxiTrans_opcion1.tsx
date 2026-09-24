@@ -1,7 +1,5 @@
-import React from "react";
-import img from "../assets/images/hero_images/myTaxi.jpg"
-import imgProfile from "../assets/images/jacob_profile.jpg"
-
+import img from "../assets/images/hero_images/myTaxi.jpg";
+import imgProfile from "../assets/images/jacob_profile.jpg";
 
 export default function TaxiTrans() {
   return (
@@ -23,7 +21,7 @@ export default function TaxiTrans() {
             to your destination.
           </p>
           <button className="mt-8 bg-yellow-400 text-black px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition">
-            Book Your Transfer
+            Book Your Transfer hello
           </button>
         </div>
       </div>

@@ -173,7 +173,7 @@ export default function PhotoGallery() {
         </div>
 
         {/* BENTO GRID CONTAINER */}
-        <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-3 gap-4 h-[550px] relative">
+        <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-3 gap-4 h-137.5 relative">
           {/* 1. Main Hero Image */}
           <div className="col-span-1 md:col-span-3 row-span-3 relative rounded-3xl overflow-hidden bg-neutral-900 shadow-xl">
             <AnimatePresence
@@ -205,7 +205,7 @@ export default function PhotoGallery() {
                 </div>
               )}
             </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* 2. Top Right Supporting Image */}

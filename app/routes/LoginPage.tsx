@@ -105,14 +105,14 @@ export default function LoginPage() {
         <button
           type="button"
           onClick={() => navigate("/shop")} // Change to "/" if your root is different
-          className="absolute rounded-xl py-1 px-1 top-6 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 left-6 text-neutral-500 hover:text-emerald-400 transition-colors duration-200 flex items-center gap-1.5 text-[10px] font-mono tracking-widest uppercase font-bold opacity-80 hover:opacity-100"
+          className="absolute rounded-xl py-1 px-1 top-6 bg-linear-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 left-6 text-neutral-500 hover:text-emerald-400 transition-colors duration-200 flex items-center gap-1.5 text-[10px] font-mono tracking-widest uppercase font-bold opacity-80 hover:opacity-100"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Abort</span>
         </button>
         {/* BRAND HEADER MODULE */}
         <div className="text-center">
-          <h2 className="text-2xl font-black bg-gradient-to-r from-white via-neutral-200 to-emerald-400 bg-clip-text text-transparent tracking-tight font-mono">
+          <h2 className="text-2xl font-black bg-linear-to-r from-white via-neutral-200 to-emerald-400 bg-clip-text text-transparent tracking-tight font-mono">
             {isSignUpMode ? "INITIALIZE ACCOUNT" : "SECURE ACCESS GATEWAY"}
           </h2>
           <p className="text-xs text-neutral-400 mt-1 font-mono">
@@ -213,7 +213,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-2 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 disabled:from-neutral-800 disabled:to-neutral-800 disabled:text-neutral-500 disabled:cursor-not-allowed transition-all duration-200 text-white rounded-xl text-xs font-bold tracking-wider uppercase font-mono shadow-lg shadow-emerald-950/50 flex items-center justify-center gap-2"
+            className="w-full mt-2 py-3 bg-linear-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 disabled:from-neutral-800 disabled:to-neutral-800 disabled:text-neutral-500 disabled:cursor-not-allowed transition-all duration-200 text-white rounded-xl text-xs font-bold tracking-wider uppercase font-mono shadow-lg shadow-emerald-950/50 flex items-center justify-center gap-2"
           >
             {loading ? (
               <div className="w-4 h-4 border-2 border-neutral-400 border-t-transparent rounded-full animate-spin" />

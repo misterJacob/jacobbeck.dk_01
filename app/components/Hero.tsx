@@ -1,7 +1,9 @@
-import React from "react";
-import { ArrowRight, ChevronDown, Sparkles, Play } from "lucide-react";
-import { useEffect, useState } from "react";
-import { entryData, type NavigationEntry } from "../data/EntryData";
+import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
+import { entryData } from "../data/EntryData";
+import PhotoCompilationButton from "./PhotoCompilationButton";
+
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState("PlacesToGo");
@@ -31,15 +33,16 @@ export default function HeroSection() {
     <section
       id="top"
       className="Hero relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
-    >      <div
+    >
+      {" "}
+      <div
         className="absolute inset-0 opacity-30"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`,
         }}
       />
       <div className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 right-4 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
-
       <div className="hero_card_wrapper max-w-7xl mx-auto text-center relative w-full">
         <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 text-center lg:text-left gap-6 sm:gap-8 lg:gap-12 items-center relative">
           <div>
@@ -51,13 +54,13 @@ export default function HeroSection() {
             </div>
 
             <h1 className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-4 sm:mb-6 animate-in slide-in-from-bottom duration-700 delay-100 leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent block mb-1 sm:mb-2">
+              <span className="bg-linear-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent block mb-1 sm:mb-2">
                 Absolute The
               </span>
-              <span className="bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent block mb-1 sm:mb-2">
+              <span className="bg-linear-to-b from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent block mb-1 sm:mb-2">
                 Places You
               </span>
-              <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent block mb-1 sm:mb-2">
+              <span className="bg-linear-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent block mb-1 sm:mb-2">
                 Must See
               </span>
             </h1>
@@ -70,24 +73,26 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-12 animate-in slide-in-from-bottom duration-700 delay-300">
-              <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-b from-blue-600 to-blue-400 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-102 flex items-center justify-center space-x-2">
+              <Link
+                to="/shop"
+                className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-b from-blue-600 to-blue-400 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-102 flex items-center justify-center space-x-2"
+              >
                 <span>
                   Go Explore some secondhand items in online marketplaces
                 </span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              </Link>
 
-              <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-white/10 flex items-center justify-center space-x-2">
-                <div className="p-2 bg-white/10 rounded-full group-hover:bg-white/20 duration-300 transition-colors">
-                  <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-white" />
-                </div>
-                <span>Watch a short photo compilation of the island</span>
-              </button>
+              <PhotoCompilationButton
+                apiBase="https://preview-api.jacobbeck.dk"
+                photoCount={16}
+                intervalMs={4000}
+              />
             </div>
           </div>
           <div className="relative order-2 w-full ">
-            <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-8 shadow-2xl border border-white/10 sm:h-[550px]">
-              <div className="bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-[500px] lg:h-[450px] border border-white/5">
+            <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-8 shadow-2xl border border-white/10 sm:h-137.5">
+              <div className="bg-linear-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-125 lg:h-112.5 border border-white/5">
                 {/* IDE HEADER */}
                 <div className="flex items-center justify-between px-3 sm:px-10 py-2 sm:py-3 bg-white/5 backdrop-blur-sm border-b border-white/10">
                   <div className="flex items-center space-x-1 sm-space-x-2">
@@ -138,12 +143,14 @@ export default function HeroSection() {
                           onClick={(e) => {
                             e.preventDefault();
 
-                            const target = document.getElementById(currentCard.path);
+                            const target = document.getElementById(
+                              currentCard.path,
+                            );
                             if (target) {
                               target.scrollIntoView({
                                 behavior: "smooth",
                                 block: "center",
-                              })
+                              });
                             }
                           }}
                           className="hello flex w-full h-full flex-col md:flex-row gap-3 items-start md:items-center"
@@ -160,7 +167,7 @@ export default function HeroSection() {
                           {/* Dynamic Typography using your custom style string tokens */}
                           <div className="w-full flex-1 min-w-0 space-y-2 block">
                             <h3
-                              className={`text-2xl font-bold tracking-tight break-words ${currentCard.textColor}`}
+                              className={`text-2xl font-bold tracking-tight wrap-break-word ${currentCard.textColor}`}
                             >
                               {currentCard.title}
                             </h3>

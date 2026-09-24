@@ -1,7 +1,5 @@
-import React from "react";
-import img from "../assets/images/hero_images/myTaxi.jpg"
-import imgProfile from "../assets/images/jacob_profile.jpg"
-
+import img from "../assets/images/hero_images/myTaxi.jpg";
+import imgProfile from "../assets/images/jacob_profile.jpg";
 
 export default function TaxiTrans() {
   return (
@@ -18,7 +16,9 @@ export default function TaxiTrans() {
 
           {/* Action Button */}
           <a
-            href="https://wa.me/34123456789"
+            href="https://wa.me/+34669997156"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:block bg-yellow-400 text-black px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition shadow-sm"
           >
             WhatsApp Me
@@ -41,9 +41,15 @@ export default function TaxiTrans() {
             Reliable, official, and comfortable rides directly from LPA Airport
             to your destination.
           </p>
-          <button className="mt-8 bg-yellow-400 text-black px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition">
+
+          <a
+            href="https://wa.me/+34669997156"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:block bg-yellow-400 text-black px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition shadow-sm"
+          >
             Book Your Transfer
-          </button>
+          </a>
         </div>
       </div>
 
